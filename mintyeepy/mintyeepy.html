@@ -1,0 +1,145 @@
+<!--
+    yes, this code was partually written using help from ai
+-->
+
+<html>
+    <head>
+        <title>How eepy is minty?</title>
+        <link rel="icon" type="image/x-icon" href="eepy.png">
+        <style>
+            body {
+                background-color: #f9edff;
+            }
+            h1 {
+                color: #9866b1;
+            }
+            .value-display{
+                font-size: 0px;
+            }
+            .slider-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 20px;
+            }
+            .slider-bar {
+                position: relative;
+                width: 300px;
+                height: 6px;
+                background-color: #ffffff;
+                border-radius: 3px;
+                margin: 10px 0;
+            }
+            .slider-thumb {
+                position: absolute;
+                top: 50%;
+                width: 20px;
+                height: 20px;
+                background-color: #e5b0ff;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+            }
+            .input-box, .value-button {
+                border: 2px solid #9866b1;
+                border-radius: 5%;
+                text-align: center;
+            }
+            .value-button {
+                width: 25px;
+                height: 25px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                background-color: #ffffff;
+            }
+            .value-button:hover, .input-box:hover {
+                background-color: #fadfff;
+            }
+            .footer {
+                position: fixed;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+                font-size: 12px;
+                color: #e5b0ff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slider-container">
+            <h1>How eepy is minty?</h1>
+            <div class="slider-bar" id="sliderBar">
+                <div class="slider-thumb" id="sliderThumb"></div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button id="decreaseValue" class="value-button">-</button>
+                <input id="inputValue" class="input-box" type="number" min="0" max="255" step="0.005" value="0.5" readonly>
+                <button id="increaseValue" class="value-button">+</button>
+            </div>
+            <div id="valueDisplay" class="value-display">Value: 0.500</div>
+        </div>
+        <div class="footer">hint: you can press the + and - keys on your keyboard</div>
+        <script>
+            const sliderThumb = document.getElementById('sliderThumb');
+            const inputValue = document.getElementById('inputValue');
+            const valueDisplay = document.getElementById('valueDisplay');
+            const decreaseValueButton = document.getElementById('decreaseValue');
+            const increaseValueButton = document.getElementById('increaseValue');
+            const sliderWidth = document.getElementById('sliderBar').offsetWidth;
+            const maxSliderValue = 1;
+
+            function updateThumbPosition(value) {
+                sliderThumb.style.left = `${(value / maxSliderValue) * sliderWidth}px`;
+                valueDisplay.textContent = `Value: ${value.toFixed(3)}`;
+            }
+
+            sliderThumb.addEventListener('mousedown', (event) => {
+                const startX = event.clientX;
+                const initialLeft = parseFloat(sliderThumb.style.left) || 0;
+
+                function onMouseMove(e) {
+                    const deltaX = e.clientX - startX;
+                    const percentage = Math.min(Math.max((initialLeft + deltaX) / sliderWidth, 0), 1);
+                    const newValue = percentage * maxSliderValue;
+                    inputValue.value = newValue.toFixed(3);
+                    updateThumbPosition(newValue);
+                }
+
+                function onMouseUp() {
+                    document.removeEventListener('mousemove', onMouseMove);
+                    document.removeEventListener('mouseup', onMouseUp);
+                }
+
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            });
+
+            decreaseValueButton.addEventListener('click', () => {
+                const value = Math.max(parseFloat(inputValue.value) - 0.005, 0);
+                inputValue.value = value.toFixed(3);
+                updateThumbPosition(value);
+            });
+
+            increaseValueButton.addEventListener('click', () => {
+                const value = Math.min(parseFloat(inputValue.value) + 0.005, 1);
+                inputValue.value = value.toFixed(3);
+                updateThumbPosition(value);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === '=') {
+                    const value = Math.min(parseFloat(inputValue.value) + 0.005, 1);
+                    inputValue.value = value.toFixed(3);
+                    updateThumbPosition(value);
+                } else if (event.key === '-') {
+                    const value = Math.max(parseFloat(inputValue.value) - 0.005, 0);
+                    inputValue.value = value.toFixed(3);
+                    updateThumbPosition(value);
+                }
+            });
+
+            updateThumbPosition(parseFloat(inputValue.value));
+        </script>
+    </body>
+</html>
