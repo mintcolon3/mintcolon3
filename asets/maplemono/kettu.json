@@ -1,0 +1,25 @@
+{
+  "spec": 1,
+  "name": "Maple Mono",
+  "previewText": "bwaa",
+  "main": {
+    "ABCGintoNord-ExtraBold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-ExtraBold.ttf",
+    "ggsans-Bold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Bold.ttf",
+    "ggsans-BoldItalic": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-BoldItalic.ttf",
+    "ggsans-ExtraBold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-ExtraBold.ttf",
+    "ggsans-ExtraBoldItalic": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-ExtraBoldItalic.ttf",
+  	"ggsans-Medium": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Medium.ttf",
+  	"ggsans-MediumItalic": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-MediumItalic.ttf",
+  	"ggsans-Normal": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Regular.ttf",
+  	"ggsans-NormalItalic": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Italic.ttf",
+  	"ggsans-Semibold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-SemiBold.ttf",
+  	"ggsans-SemiboldItalic": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-SemiBoldItalic.ttf",
+  	"NotoSans-Bold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Bold.ttf",
+  	"NotoSans-ExtraBold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-ExtraBold.ttf",
+  	"NotoSans-Medium": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Medium.ttf",
+  	"NotoSans-Normal": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Regular.ttf",
+  	"NotoSans-NormalItalic": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-Italic.ttf",
+  	"NotoSans-Semibold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-SemiBold.ttf",
+  	"SourceCodePro-Semibold": "https://github.com/mintcolon3/mintcolon3/raw/refs/heads/main/asets/maplemono/MapleMono-SemiBold.ttf"
+  }
+}
